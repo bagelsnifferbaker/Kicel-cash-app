@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  height: 100vh;
+  /* opacity: 0;  <-- remove or comment out unless you plan to animate */
+  background-image: url("assets/Kicel cash logo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  background-color: #f0f0f0; /* light background for contrast */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.centered-box {
+  background-color: #a5a9b4; /* blue-gray color */
+  color: white;
+  padding: 60px 100px;
+  border-radius: 20px; /* curved corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  width: 250px;
+  height: 400px;
+}
+.text-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  outline: none;
+  margin-top: 20px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.text-input:focus {
+  box-shadow: 0 0 8px 2px #7b8fff;
+}
+.small-inputs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;  /* space between the small inputs */
+}
+
+.small-text-input {
+  width: 80px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.15);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.small-text-input:focus {
+  box-shadow: 0 0 6px 2px #7b8fff;
+}
+.submit-button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  background-color: #7b8fff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(123, 143, 255, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #5a6ddd;
+  box-shadow: 0 6px 18px rgba(90, 109, 221, 0.8);
+}

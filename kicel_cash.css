@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    height: 100vh;
+    opacity: 0;
+    background-image: url('assets/Kicel\ cash\ logo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: opacity 2s ease-in;
+}
+
+h1 {
+    margin: 0;
+    
+}
+
+.custom-button {
+    position: absolute;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 100px;
+    background: linear-gradient(to right, #ff6d6d, #ced655); /* gradient */
+    cursor: pointer;
+    bottom: 60%;
+    left: 43%
+}
+#splashEffect {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, 
+      #fb3200 0%, 
+      #fea900 25%, 
+      #f6fa00 50%, 
+      #00ff40 75%, 
+      #00c6ff 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  z-index: 9999;
+}
+
+#splashEffect.active {
+  width: 200vw;
+  height: 200vw;
+  opacity: 1;
+}
+
+.main-title {
+    
+    color: #f73232;
+}
