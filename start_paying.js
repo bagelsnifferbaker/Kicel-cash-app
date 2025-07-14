@@ -1,4 +1,8 @@
-function validateCard() {
+document.getElementById('payment-form').addEventListener('submit', validateCard);
+
+function validateCard(event) {
+  event.preventDefault(); // This is crucial!
+
   const cardNumberRaw = document.getElementById('cardNumber').value;
   const expDateRaw = document.getElementById('expDate').value;
   const cardHolderRaw = document.getElementById('cardHolder').value;
@@ -9,40 +13,35 @@ function validateCard() {
   const expDate = expDateRaw.trim();
   const cardHolder = cardHolderRaw.trim();
 
-  // Validate card number: digits only, 16 digits, and Luhn check
   if (!/^\d{16}$/.test(cardNumber) || !luhnCheck(cardNumber)) {
     errorMsg.textContent = 'Please enter a valid 16-digit card number.';
-    return false;
+    return;
   }
 
-  // Validate expiration date format MM/YY
   if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expDate)) {
     errorMsg.textContent = 'Expiration date must be in MM/YY format.';
-    return false;
+    return;
   }
 
-  // Check if expiration date is in the future
   const [month, year] = expDate.split('/');
-  const expDateObj = new Date(2000 + parseInt(year), parseInt(month), 0); // Last day of the month
+  const expDateObj = new Date(2000 + parseInt(year), parseInt(month), 0);
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // Ignore time part
+  today.setHours(0, 0, 0, 0);
 
   if (expDateObj < today) {
     errorMsg.textContent = 'Card has expired.';
-    return false;
+    return;
   }
 
-  // Validate card holder name
   if (!/^[a-zA-Z\s]{2,}$/.test(cardHolder)) {
     errorMsg.textContent = 'Please enter a valid card holder name.';
-    return false;
+    return;
   }
 
   alert('Card is valid! Processing payment...');
-  return true;
 }
 
-// Optional: Luhn algorithm for card number validation
+// Luhn Check Function
 function luhnCheck(num) {
   let sum = 0;
   let shouldDouble = false;
